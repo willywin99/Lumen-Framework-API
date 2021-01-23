@@ -55,14 +55,24 @@ $router->get('/options', function() {
     return 'OPTIONS';
 });
 
+// Basic Route Parameter
 $router->get('/user/{id}', function($id) {
     return 'User id = ' . $id;
 });
 
 $router->get('/post/{postId}/comments/{commentId}', function ($postId, $commentId) {
-    return 'Post ID = ' . $postId . ' Comment ID = ' . $commentId;
+    return "Post ID =  {$postId} <br> Comment ID = {$commentId}";
 });
 
+// Optional Route Parameter
 $router->get('/optional[/{param}]', function ($param = null) {
     return $param;
+});
+
+$router->get('profile/willywin', ['as' => 'route.profile', function () {
+    return 'Route willywin';
+}]);
+
+$router->get('profile', function () {
+    return redirect()->route('route.profile');
 });

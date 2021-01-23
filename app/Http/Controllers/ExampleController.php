@@ -5,6 +5,8 @@ use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 
+// use Illuminate\Http\Response;
+
 class ExampleController extends Controller
 {
     /**
@@ -80,6 +82,16 @@ class ExampleController extends Controller
 
         // return $request->only(['username', 'password']);
         return $request->except(['username', 'password']);
+    }
+
+    public function response()
+    {
+        // $data['status'] = 'Success';
+        // return response($data, 201)->header()->header()->header();
+        return response()->json([
+            'message' => 'Fail! Not Found!',
+            'status' => false
+        ], 404);
     }
 }
 

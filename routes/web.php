@@ -54,3 +54,15 @@ $router->get('/delete', function() {
 $router->get('/options', function() {
     return 'OPTIONS';
 });
+
+$router->get('/user/{id}', function($id) {
+    return 'User id = ' . $id;
+});
+
+$router->get('/post/{postId}/comments/{commentId}', function ($postId, $commentId) {
+    return 'Post ID = ' . $postId . ' Comment ID = ' . $commentId;
+});
+
+$router->get('/optional[/{param}]', function ($param = null) {
+    return $param;
+});

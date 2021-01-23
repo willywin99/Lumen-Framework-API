@@ -13,6 +13,7 @@ class ExampleController extends Controller
     public function __construct()
     {
         //
+        $this->middleware('age', ['except' => ['getUser']]);
     }
 
     //

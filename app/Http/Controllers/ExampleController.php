@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Str;
 
 class ExampleController extends Controller
 {
@@ -15,4 +16,13 @@ class ExampleController extends Controller
     }
 
     //
+    public function generateKey()
+    {
+        return Str::random(32);
+    }
+
+    public function fooExample()
+    {
+        return 'Example Controller from POST Request';
+    }
 }

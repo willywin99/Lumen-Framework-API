@@ -76,3 +76,13 @@ $router->get('profile/willywin', ['as' => 'route.profile', function () {
 $router->get('profile', function () {
     return redirect()->route('route.profile');
 });
+
+$router->group(['prefix' => 'admin'], function() use ($router) {
+    $router->get('home', function() {
+        return 'Home Admin';
+    });
+
+    $router->get('profile', function() {
+        return 'Profile Admin';
+    });
+});

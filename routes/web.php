@@ -21,3 +21,36 @@ $router->get('/', function () use ($router) {
 $router->get('/key', function() {
     return Str::random(32);
 });
+
+$router->get('/foo', function() {
+    return 'Hello, Get Method!';
+});
+
+$router->post('/bar', function() {
+    return 'Hello, POST Method!';
+});
+
+// The router allows you to register routes that respon to any HTTP verb:
+$router->get('/get', function() {
+    return 'GET';
+});
+
+$router->get('/post', function() {
+    return 'POST';
+});
+
+$router->get('/put', function() {
+    return 'PUT';
+});
+
+$router->get('/patch', function() {
+    return 'PATCH';
+});
+
+$router->get('/delete', function() {
+    return 'DELETE';
+});
+
+$router->get('/options', function() {
+    return 'OPTIONS';
+});
